@@ -270,6 +270,11 @@ if has("gui_running")
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
+        macmenu File.New\ Tab      key=<nop>
+        macm File.New\ Tab         key=<nop>
+        macmenu File.Close         key=<nop>
+        macm File.Close            key=<nop>
+        map <D-w> :bd<CR>
         " make Mac's Option key behave as the Meta key
         set invmmta
         try
