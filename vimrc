@@ -250,10 +250,6 @@ set ttymouse=xterm2
 "hide buffers when not displayed
 set hidden
 
-"Command-T configuration
-let g:CommandTMaxHeight=10
-let g:CommandTMatchWindowAtTop=1
-
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
@@ -274,7 +270,6 @@ if has("gui_running")
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
-        "map <D-t> :CommandT<CR>
         " make Mac's Option key behave as the Meta key
         set invmmta
         try
@@ -294,7 +289,7 @@ endif
 
 " PeepOpen uses <Leader>p as well so you will need to redefine it so something
 " else in your ~/.vimrc file, such as:
-" nmap <silent> <Leader>q <Plug>PeepOpen
+map <silent> <D-t> <Plug>PeepOpen
 
 silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :call FindInNERDTree()<CR> 
@@ -305,9 +300,6 @@ inoremap <C-L> <C-O>:nohls<CR>
 
 "map to bufexplorer
 nnoremap <leader>b :BufExplorer<cr>
-
-"map to CommandT TextMate style finder
-nnoremap <leader>t :CommandT<CR>
 
 "map Q to something useful
 noremap Q gq
