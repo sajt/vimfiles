@@ -393,3 +393,7 @@ nmap <S-Tab> gT
 
 let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
 let mapleader=","
+
+"remove trailing whitespace when document is saved
+autocmd BufWritePre * :%s/\s\+$//e
+
