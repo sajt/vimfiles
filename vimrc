@@ -391,4 +391,5 @@ map <C-l> <C-w>l
 nmap <Tab> gt
 nmap <S-Tab> gT
 
-let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'} 
+let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
+let mapleader=","
