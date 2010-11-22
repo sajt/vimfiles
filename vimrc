@@ -292,12 +292,16 @@ else
     let g:CSApprox_loaded = 1
 endif
 
-" PeepOpen uses <Leader>p as well so you will need to redefine it so something
+" PeepOpen uses <leader>p as well so you will need to redefine it so something
 " else in your ~/.vimrc file, such as:
 map <silent> <D-t> <Plug>PeepOpen
 
-silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
-nnoremap <silent> <C-f> :call FindInNERDTree()<CR> 
+let NERDTreeChDirMode = 2
+let NERDTreeIgnore = ['\.git$', '\~$', '^tmp$', '^log$', '\.bundle$', '\.sass-cache', '\.swp$', '\.test-app-root$']
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowHidden = 1
+nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+nnoremap <silent> <C-f> :call :FindInNERDTree()<cr>
 
 "make <c-l> clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR><C-L>
