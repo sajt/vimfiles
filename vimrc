@@ -401,3 +401,7 @@ let mapleader=","
 "remove trailing whitespace when document is saved
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Ack
+noremap <leader>a  :Ack
+noremap <leader>A  :AckFromSearch<cr>
+
