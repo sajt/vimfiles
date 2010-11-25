@@ -24,6 +24,9 @@ set number      "add line numbers
 set showbreak=...
 set wrap linebreak nolist
 
+"display relative numbers
+set rnu
+
 "mapping for command key to map navigation thru display lines instead
 "of just numbered lines
 vmap <D-j> gj
