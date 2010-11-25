@@ -298,7 +298,7 @@ map <silent> <D-t> <Plug>PeepOpen
 
 let NERDTreeChDirMode = 2
 let NERDTreeIgnore = ['\.git$', '\~$', '^tmp$', '^log$', '\.bundle$', '\.sass-cache', '\.swp$', '\.test-app-root$']
-let NERDTreeQuitOnOpen = 1
+let NERDTreeQuitOnOpen = 0
 let NERDTreeShowHidden = 1
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
 nnoremap <silent> <C-f> :call :FindInNERDTree()<cr>
