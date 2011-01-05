@@ -419,3 +419,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 noremap <leader>a  :Ack
 noremap <leader>A  :AckFromSearch<cr>
 
+" YankRing
+nnoremap <silent> <F3> :YRShow<cr>
+inoremap <silent> <F3> <ESC>:YRShow<cr>
+
