@@ -13,8 +13,6 @@ set history=100
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
 
-set nowrap
-
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
 set ignorecase
@@ -23,10 +21,20 @@ set smartcase
 set number      "add line numbers
 
 "indent settings
+set nowrap
+set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set list listchars=tab:\ \ ,trail:·
 set autoindent
+
+" Tab completion
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+
+" Status bar - always have a status displayed
+set laststatus=2
 
 "folding settings
 set foldmethod=indent   "fold based on indent
@@ -50,8 +58,6 @@ set statusline=%f       "tail of the filename
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
 
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-
 set formatoptions-=o "dont continue comments when pushing o/O
 
 "load ftplugins and indent files
@@ -69,31 +75,18 @@ set ttymouse=xterm2
 "hide buffers when not displayed
 set hidden
 
-let NERDTreeChDirMode = 2
-let NERDTreeIgnore = ['\.git$', '\~$', '^tmp$', '^log$', '\.bundle$', '\.sass-cache', '\.swp$', '\.test-app-root$']
-let NERDTreeQuitOnOpen = 0
-let NERDTreeShowHidden = 1
-nnoremap <silent> <leader>n :NERDTreeToggle<cr>
-nnoremap <silent> <C-f> :call :FindInNERDTree()<cr>
+if has('gui_running')
+  set guifont=DejaVu\ Sans\ Mono:h15
+endif
+
+""" Key mappings
 
 "make <c-l> clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR><C-L>
 inoremap <C-L> <C-O>:nohls<CR>
 
-"map to bufexplorer
-nnoremap <leader>b :BufExplorer<cr>
-
-"jump to last cursor position when opening a file
-"dont do it when writing a commit log entry
-autocmd BufReadPost * call SetCursorPosition()
-function! SetCursorPosition()
-    if &filetype !~ 'commit\c'
-        if line("'\"") > 0 && line("'\"") <= line("$")
-            exe "normal! g`\""
-            normal! zz
-        endif
-    end
-endfunction
+" Switch to command mode without reaching up
+inoremap kj <Esc>
 
 "key mapping for window navigation
 map <C-h> <C-w>h
@@ -116,13 +109,82 @@ imap <right> <nop>
 nmap <Tab> gt
 nmap <S-Tab> gT
 
-let mapleader=","
+"make <c-l> clear the highlight as well as redraw
+nnoremap <D-L> :nohls<CR><C-L>
+inoremap <D-L> <C-O>:nohls<CR>
+
+" Switch to command mode without reaching up
+inoremap kj <Esc>
+
+""" Auto commands
 
 "remove trailing whitespace when document is saved
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+
+" md, markdown, and mk are markdown and define buffer-local preview
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+" add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
+function s:setupWrapping()
+  set wrap
+  set wrapmargin=2
+  set textwidth=72
+endfunction
+
+au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+let mapleader=","
+
+" Default color scheme
+color molokai
+
+" Directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
+
+" % to bounce from do to end etc.
+runtime! macros/matchit.vim
+
+" To prevent CommandT from indexing those files
+set wildignore+=*vendor*,tmp/*
+""""" Plugin configuration
+
 " Ack
 noremap <leader>a  :Ack!
 noremap <leader>A  :AckFromSearch<cr>
+
+" Command-T configuration
+let g:CommandTMaxHeight=20
+
+" ZoomWin configuration
+map <Leader><Leader> :ZoomWin<CR>
+
+" NERDTree configuration
+let NERDTreeChDirMode = 2
+let NERDTreeIgnore = ['\.pyc$', '\.rbc$', '\.git$', '\~$', '^tmp$', '^log$', '\.bundle$', '\.sass-cache', '\.swp$', '\.test-app-root$']
+let NERDTreeQuitOnOpen = 0
+let NERDTreeShowHidden = 1
+nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+nnoremap <silent> <C-f> :call :FindInNERDTree()<cr>
+
+"map to bufexplorer
+nnoremap <leader>b :BufExplorer<cr>
+
+"jump to last cursor position when opening a file
+"dont do it when writing a commit log entry
+autocmd BufReadPost * call SetCursorPosition()
+function! SetCursorPosition()
+    if &filetype !~ 'commit\c'
+        if line("'\"") > 0 && line("'\"") <= line("$")
+            exe "normal! g`\""
+            normal! zz
+        endif
+    end
+endfunction
 
 
