@@ -53,7 +53,8 @@ set linespace=4
 set visualbell t_vb=
 
 "statusline setup
-set statusline=%f       "tail of the filename
+set statusline =%r%m%f\ %y
+set statusline +=%=%l,%c
 
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
@@ -76,7 +77,7 @@ set ttymouse=xterm2
 set hidden
 
 if has('gui_running')
-  set guifont=DejaVu\ Sans\ Mono:h15
+  set guifont=DejaVu\ Sans\ Mono:h13
 endif
 
 """ Key mappings
@@ -123,9 +124,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile *.{cljs}    set ft=clojure
 
 " md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+" au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
