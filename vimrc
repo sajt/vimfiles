@@ -78,10 +78,6 @@ set hidden
 
 """ Key mappings
 
-"make <c-l> clear the highlight as well as redraw
-nnoremap <C-L> :nohls<CR><C-L>
-inoremap <C-L> <C-O>:nohls<CR>
-
 " Switch to command mode without reaching up
 inoremap kj <Esc>
 
@@ -107,8 +103,8 @@ nmap <Tab> gt
 nmap <S-Tab> gT
 
 "make <c-l> clear the highlight as well as redraw
-nnoremap <D-L> :nohls<CR><C-L>
-inoremap <D-L> <C-O>:nohls<CR>
+nnoremap <C-n> :nohls<CR><C-L>
+inoremap <C-n> <C-O>:nohls<CR>
 
 " Switch to command mode without reaching up
 inoremap kj <Esc>
@@ -153,7 +149,7 @@ endif
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
-" To put vim copy-cut commands onto the system clipboard
+" To make vim copy-cut commands work as Cmd+C,Cmd+X
 set clipboard=unnamed
 
 " % to bounce from do to end etc.
