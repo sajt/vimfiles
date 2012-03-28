@@ -76,10 +76,6 @@ set ttymouse=xterm2
 "hide buffers when not displayed
 set hidden
 
-if has('gui_running')
-  set guifont=DejaVu\ Sans\ Mono:h13
-endif
-
 """ Key mappings
 
 "make <c-l> clear the highlight as well as redraw
@@ -143,8 +139,15 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 let mapleader=","
 
-" Default color scheme
-color molokai
+" Color scheme and font
+if has('gui_running')
+  colorscheme molokai
+  "set background=dark
+  set guifont=DejaVu\ Sans\ Mono:h13
+else
+  colorscheme solarized
+  "set background=light
+endif
 
 " Directories for swp files
 set backupdir=~/.vim/backup
