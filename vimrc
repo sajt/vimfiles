@@ -125,7 +125,7 @@ au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-function s:setupWrapping()
+function! s:setupWrapping()
   set wrap
   set wrapmargin=2
   set textwidth=72
