@@ -153,6 +153,9 @@ endif
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+" To put vim copy-cut commands onto the system clipboard
+set clipboard=unnamed
+
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
