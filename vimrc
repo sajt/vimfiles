@@ -138,11 +138,9 @@ let mapleader=","
 " Color scheme and font
 if has('gui_running')
   colorscheme molokai
-  "set background=dark
   set guifont=DejaVu\ Sans\ Mono:h13
 else
   colorscheme solarized
-  "set background=light
 endif
 
 " Directories for swp files
