@@ -167,7 +167,7 @@ noremap <leader>A  :AckFromSearch<cr>
 let g:CommandTMaxHeight=20
 
 " ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
+map <leader><leader> :ZoomWin<CR>
 
 " NERDTree configuration
 let NERDTreeChDirMode = 2
@@ -179,6 +179,9 @@ nnoremap <silent> <C-f> :call :FindInNERDTree()<cr>
 
 "map to bufexplorer
 nnoremap <leader>b :BufExplorer<cr>
+
+"CtrlP
+let g:ctrlp_map = '<leader>t'
 
 "jump to last cursor position when opening a file
 "dont do it when writing a commit log entry
