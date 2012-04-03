@@ -103,8 +103,8 @@ nmap <Tab> gt
 nmap <S-Tab> gT
 
 "make <c-l> clear the highlight as well as redraw
-nnoremap <C-n> :nohls<CR><C-L>
-inoremap <C-n> <C-O>:nohls<CR>
+nnoremap <C-c> :nohls<CR><C-L>
+inoremap <C-c> <C-O>:nohls<CR>
 
 " Switch to command mode without reaching up
 inoremap kj <Esc>
