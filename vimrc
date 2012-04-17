@@ -10,8 +10,10 @@ set encoding=utf-8
 "store lots of :cmdline history
 set history=100
 
-set showcmd     "show incomplete cmds down the bottom
-set showmode    "show current mode down the bottom
+set showcmd      "show incomplete cmds down the bottom
+set showmode     "show current mode down the bottom
+set shortmess=atTI "shorten vim messages to make more of them fit on a line
+set cmdheight=1
 
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
