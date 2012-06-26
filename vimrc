@@ -157,6 +157,10 @@ runtime! macros/matchit.vim
 
 " To prevent CommandT from indexing those files
 set wildignore+=*vendor*,tmp/*
+
+" Detect changed files and offer to reload them
+set autoread
+
 """"" Plugin configuration
 
 " Ack
