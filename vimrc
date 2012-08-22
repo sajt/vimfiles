@@ -142,7 +142,7 @@ if has('gui_running')
   colorscheme molokai
   set guifont=DejaVu\ Sans\ Mono:h13
 else
-  colorscheme solarized
+  colorscheme Tomorrow-Night-Eighties
 endif
 
 " Directories for swp files
