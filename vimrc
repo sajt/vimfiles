@@ -155,9 +155,6 @@ set clipboard=unnamed
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
-" To prevent CommandT from indexing those files
-set wildignore+=*vendor*,tmp/*
-
 " Detect changed files and offer to reload them
 set autoread
 
@@ -169,9 +166,6 @@ noremap <leader>A  :AckFromSearch<cr>
 
 " GitGrep
 noremap gr :GitGrep<space>
-
-" Command-T configuration
-let g:CommandTMaxHeight=20
 
 " ZoomWin configuration
 map <leader><leader> :ZoomWin<CR>
