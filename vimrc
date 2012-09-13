@@ -167,6 +167,9 @@ set autoread
 noremap <leader>a  :Ack!
 noremap <leader>A  :AckFromSearch<cr>
 
+" GitGrep
+noremap gr :GitGrep<space>
+
 " Command-T configuration
 let g:CommandTMaxHeight=20
 
