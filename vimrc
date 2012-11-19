@@ -181,8 +181,12 @@ nnoremap <silent> <C-f> :call :FindInNERDTree()<cr>
 "map to bufexplorer
 nnoremap <leader>b :BufExplorer<cr>
 
-"CtrlP
+" CtrlP
 let g:ctrlp_map = '<leader>t'
+
+" SplitJoin
+nmap sj :SplitjoinJoin<cr>
+nmap ss :SplitjoinSplit<cr>
 
 "jump to last cursor position when opening a file
 "dont do it when writing a commit log entry
