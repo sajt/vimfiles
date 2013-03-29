@@ -177,7 +177,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.rbc$', '\.git$', '\~$', '^tmp$', '^log$', '\.
 let NERDTreeQuitOnOpen = 0
 let NERDTreeShowHidden = 1
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
-nnoremap <silent> <C-f> :call :FindInNERDTree()<cr>
+nnoremap <silent> <C-f> :NERDTreeFind<cr>
 
 "map to bufexplorer
 nnoremap <leader>b :BufExplorer<cr>
