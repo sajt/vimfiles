@@ -162,7 +162,7 @@ set autoread
 """"" Plugin configuration
 
 " Ack
-noremap <leader>a  :Ack!
+noremap <leader>a  :Ag!<space>
 noremap <leader>A  :AckFromSearch<cr>
 
 " GitGrep
