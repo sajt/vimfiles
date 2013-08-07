@@ -117,8 +117,8 @@ inoremap kj <Esc>
 "remove trailing whitespace when document is saved
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+" Thorfile, Rakefile, Vagrantfile, Thorfile, Guardfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru}    set ft=ruby
 au BufRead,BufNewFile *.{cljs}    set ft=clojure
 
 " md, markdown, and mk are markdown and define buffer-local preview
