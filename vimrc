@@ -34,7 +34,7 @@ set autoindent
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,coverage/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor,coverage/*
 
 " Status bar - always have a status displayed
 set laststatus=2
