@@ -21,6 +21,7 @@ set ignorecase
 set smartcase
 
 set number      "add line numbers
+set rnu         "relative line numbers
 
 "indent settings
 set nowrap
