@@ -119,7 +119,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Thorfile, Rakefile, Vagrantfile, Thorfile, Guardfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru}    set ft=ruby
-au BufRead,BufNewFile *.{cljs}    set ft=clojure
+au BufRead,BufNewFile *.{clj,cljs}    set ft=clojure
 
 " md, markdown, and mk are markdown and define buffer-local preview
 " au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
