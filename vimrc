@@ -34,7 +34,7 @@ set autoindent
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor,coverage/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,coverage/*
 
 " Status bar - always have a status displayed
 set laststatus=2
@@ -176,9 +176,10 @@ map <leader><leader> :ZoomWin<CR>
 
 " NERDTree configuration
 let NERDTreeChDirMode = 2
-let NERDTreeIgnore = ['\.pyc$', '\.rbc$', '\.git$', '\~$', '^tmp$', '^log$', '\.bundle$', '\.sass-cache', '\.swp$', '\.test-app-root$']
+"let NERDTreeIgnore = ['\.pyc$', '\.rbc$', '\.git$', '\~$', '^tmp$', '^log$', '\.bundle$', '\.sass-cache', '\.swp$', '\.test-app-root$']
 let NERDTreeQuitOnOpen = 0
 let NERDTreeShowHidden = 1
+let NERDTreeIgnore=['\~$', '^vendor$']
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
 nnoremap <silent> <C-f> :NERDTreeFind<cr>
 
@@ -187,6 +188,9 @@ nnoremap <leader>b :BufExplorer<cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>t'
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'vendor$'
+  \ }
 
 " SplitJoin
 nmap sj :SplitjoinJoin<cr>
