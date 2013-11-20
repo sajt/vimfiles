@@ -20,7 +20,7 @@ set hlsearch    "hilight searches by default
 set ignorecase
 set smartcase
 
-set number      "add line numbers
+" set number      "add line numbers
 set rnu         "relative line numbers
 
 "indent settings
@@ -127,6 +127,8 @@ au BufNewFile,BufRead *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
+
+"au BufNewFile * set rnu
 
 function! s:setupWrapping()
   set wrap
