@@ -188,6 +188,7 @@ nnoremap <leader>b :BufExplorer<cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'vendor$'
   \ }
