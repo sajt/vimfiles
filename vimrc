@@ -164,9 +164,10 @@ set autoread
 
 """"" Plugin configuration
 
-" Ack
+" Ack and Ag
 noremap <leader>a  :Ag!<space>
 noremap <leader>A  :AckFromSearch<cr>
+noremap <leader>wa :Ag!<space>-w<space>
 
 " GitGrep
 noremap gr :GitGrep<space>
