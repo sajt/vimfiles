@@ -16,7 +16,7 @@ A vim plugin for working with [mustache][mustache] and
 ### Install for pathogen
 
     cd ~/.vim/
-    git submodule add git://github.com/mustache/vim-mustache-handlebars.git bundle/mustache
+    git clone git://github.com/mustache/vim-mustache-handlebars.git bundle/mustache
     vim bundle/mustache/example.mustache
 
 Get [pathogen][pathogen].
@@ -98,10 +98,14 @@ In that spirit, this plugin defines 2 text objects:
 
 Here are other usage examples:
  - `dae` - deletes the whole mustache tag, including the curly braces
- - `die` - deletes **inside* the mustache tag, leaving only curly braces
+ - `die` - deletes **inside** the mustache tag, leaving only curly braces
  - `yae` - "yanks" the whole mustache tag - with curly braces
  - `cie` - deletes **inside** the mustache tag and goes in insert mode
 
+`ie` and `ae` text objects are enabled by default. To disable them, put the
+following in your `.vimrc`:
+
+    let g:mustache_operators = 0
 
 ## Maintainers
 

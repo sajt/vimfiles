@@ -20,8 +20,8 @@ set hlsearch    "hilight searches by default
 set ignorecase
 set smartcase
 
-" set number      "add line numbers
 set rnu         "relative line numbers
+set number      "show line number of current line
 
 "indent settings
 set nowrap
@@ -162,6 +162,9 @@ runtime! macros/matchit.vim
 " Detect changed files and offer to reload them
 set autoread
 
+" Copy (Yank) the file path of the current buffer
+noremap <silent> <F4> :let @+=expand("%")<CR>
+
 """"" Plugin configuration
 
 " Ack and Ag
@@ -191,12 +194,15 @@ nnoremap <leader>b :BufExplorer<cr>
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = {
-  \ 'dir': 'vendor$'
+  \ 'dir': '\v[\/](tmp|node_modules|build|tmp|transpiled)$'
   \ }
 
 " SplitJoin
 nmap sj :SplitjoinJoin<cr>
 nmap ss :SplitjoinSplit<cr>
+
+" vim-mustache-handlebars
+let g:mustache_abbreviations = 1
 
 "jump to last cursor position when opening a file
 "dont do it when writing a commit log entry
